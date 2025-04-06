@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todu App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="container">
+           <h1>Todu App</h1>
+           <div class="inp-grp">
+              <input type="text" id="inp">
+              <button onclick="add()">submit</button>
+           </div> 
+     </div>
+     <div class="lists">
+        <ul id="list">
+            <li >Hello <button onclick="del(event)">Delete</button></li>
+          </ul>
+      </div>
+     <script>
+       //select input 
+       var input = document.getElementById("inp")
+       var lists = document.getElementById("list")
+       
+       function add(){
+           var newList = document.createElement("li");
+           newList.innerHTML =input.value + "<button onclick='del(event)''>Delete</button>";
+           lists.append(newList)
+       }
+
+       function del(event){
+
+          event.target.parentElement.remove()
+       }
+       
+     </script>
+</body>
+</html>
